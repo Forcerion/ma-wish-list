@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- Bouton don centré --- */
+.don-button {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #28a745; /* vert pour différencier */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    margin: 0 auto 20px auto; /* centré et marge en bas */
+    display: block; /* nécessaire pour que margin auto centre horizontalement */
+    max-width: 100px;
+}
+
+.don-button:hover {
+    background-color: #218838;
+}
+
+/* --- Grille responsive des cartes --- */
+.liste-souhaits {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Carte de chaque article --- */
+.carte {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-rows: auto auto auto auto; /* image / nom / prix / bouton */
+    row-gap: 10px;
+    justify-items: center;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.carte:hover {
+    transform: scale(1.03);
+}
+
+.carte img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carte .nom {
+    font-weight: bold;
+}
+
+.carte .prix {
+    color: #555;
+}
+
+/* Le bouton de la carte */
+.carte .btn {
+    width: 160px; /* uniforme */
+}
+
+/* --- Carte de détail centrée --- */
+.detail-card {
+    max-width: 450px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 15px;
+    text-align: center;
+    justify-items: center;
+}
+
+.detail-card .detail-img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.detail-card .prix {
+    font-size: 18px;
+    color: #555;
+}
+
+.detail-card .btn {
+    width: 180px;
+}
+
+/* --- Boutons généraux --- */
+.btn {
+    display: inline-block;
+    text-align: center;
+    padding: 8px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    width: 160px; /* uniforme */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Formulaire PayPal */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1200px) {
+    .liste-souhaits {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .liste-souhaits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .liste-souhaits {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-card {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .detail-card .detail-img {
+        height: 180px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .don-button {
+        width: 100%;
+        max-width: 250px;
+    }
+}
